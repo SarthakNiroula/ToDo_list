@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+
+<style>
+    *{
+        margin: 0%;
+        padding:0%;
+    }
+
+    .title_text{
+        text-align: center;
+        color:wheat;
+        background-color: black;
+        height: 10vh;
+        font-size: 40px;
+        position:sticky;
+        cursor: pointer;
+    }
+    .add_text{
+        text-align: center;
+        background-color: rgb(155, 155, 66);
+        /* height:1vh; */
+        margin-top: 2%;
+        padding: 2%;
+    }
+    .add_text input{
+        /* height: 7; */
+        width:80%;
+    }
+    .symb{
+        color: rgb(255, 255, 255);
+        background-color: black;
+        border: solid transparent;
+        /* width:  */
+        height: 40vh;
+        cursor: pointer;
+    }
+
+    .list_main{
+        background-color: black;
+        /* color: rgb(152, 1, 1); */
+        height: auto;
+        margin: 1%;
+        padding: 5%;
+    }
+    .sublist{
+        background-color: rgb(255, 255, 255);
+        height: 10vh;
+         display: flex;
+         justify-content: center;
+         /* this two are needed to take to middle */
+         align-items: center;
+        border: solid red;
+        margin-block: 1vh;
+
+        /* column-gap: 10vh; */
+        /* width: 50%; */
+        /* margin-top: 12%; */
+
+        /* margin-inline: 10%; */
+        /* margin-block: 10%; */
+        /* margin: 4%; */
+        /* margin: 2%; */
+    }
+   
+
+</style>
+    </head>
+<body>
+
+    <div class="title_text">To Do list maker</div>
+    <div class="add_text"><input type="text" class="text" placeholder="Add the work">
+        <span class="symb" onclick="added()" >&#10003;</span></div>
+
+    <div class="list_main" >
+        <div class="sublist">
+        <p class="added_task1"></p>
+        </div>
+        <div class="sublist">
+        <p class="added_task2"></p>
+         </div>
+         <div class="sublist">
+        <p class="added_task3"></p>
+         </div>
+         <div class="sublist">
+        <p class="added_task4"></p>
+         </div>
+         <div class="sublist">
+        <p class="added_task5"></p>
+        </div>
+        <div class="sublist">
+        <p class="added_task6"></p>
+        </div>
+        <div class="sublist">
+        <p class="added_task7"></p>
+         </div>
+         <div class="sublist">
+        <p class="added_task8"></p>
+         </div>
+         <div class="sublist">
+        <p class="added_task9"></p>
+         </div>
+         <div class="sublist">
+        <p class="added_task10"></p>
+        </div>
+        </div>
+
+
+
+
+    
+    <script>
+        let text= document.querySelector(".text");
+        let added_text=document.querySelectorAll("p");
+        // let x = document.querySelector(".text").placeholder;
+        let count=1;
+
+        const added=()=>{
+            if(text.value!=""){
+            
+            if(count==1){
+            document.querySelector(".added_task1").innerText=text.value;
+            text.value="";
+            }
+            else if(count==2){
+            document.querySelector(".added_task2").innerText=text.value;
+            text.value="";
+            }
+            else if(count==3){
+            document.querySelector(".added_task3").innerText=text.value;
+            text.value="";
+            }
+            else if(count==4){
+            document.querySelector(".added_task4").innerText=text.value;
+            text.value="";
+            }
+            else if(count==5){
+            document.querySelector(".added_task5").innerText=text.value;
+            text.value="";
+            }
+            else if(count==6){
+            document.querySelector(".added_task6").innerText=text.value;
+            text.value="";
+            }
+            else if(count==7){
+            document.querySelector(".added_task7").innerText=text.value;
+            text.value="";
+            }
+            else if(count==8){
+            document.querySelector(".added_task8").innerText=text.value;
+            text.value="";
+            }
+            else if(count==9){
+            document.querySelector(".added_task9").innerText=text.value;
+            text.value="";
+            }
+            else if(count==10){
+            document.querySelector(".added_task10").innerText=text.value;
+            text.value="";
+            }
+            else if(count>=11){
+                alert("limit exceed!For adding more, unlock the paid version");
+            }
+            
+    
+            count++;
+
+        }
+        
+        else {
+            alert("please enter the work!:)");
+        }
+
+      }
+
+    </script>
+</body>
+</html>
