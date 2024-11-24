@@ -3,3 +3,9 @@ Hello everyone! This is a simple TO Do list make which is built with html, css a
 Happy coding! :)
 
 // Kind of documentation :) :) :) *.*
+
+THings to be solved:
+
+1, edit and delete option
+2, pressing enter to enter the work
+3, sound effect when clicked in enter
