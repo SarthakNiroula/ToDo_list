@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>To do list</title>
 
 <style>
@@ -51,71 +53,108 @@
         background-color: rgb(255, 255, 255);
         height: 10vh;
          display: flex;
-         justify-content: center;
+         /* justify-content:flex-end; */
+         /*center in inline */
          /* this two are needed to take to middle */
-         align-items: center;
+         align-items: center;/* box ko bich ma */
         border: solid red;
         margin-block: 1vh;
-
-        /* column-gap: 10vh; */
-        /* width: 50%; */
-        /* margin-top: 12%; */
-
-        /* margin-inline: 10%; */
-        /* margin-block: 10%; */
-        /* margin: 4%; */
-        /* margin: 2%; */
     }
-   
+
+    .sublist i{
+       cursor: pointer;
+       font-size: 30px; 
+       display: none;
+       
+    }
+    
+    .sublist p{
+        margin-left: 5%;
+        overflow: auto;
+    }
+
+    
+
+
 
 </style>
     </head>
 <body>
-
+   
     <div class="title_text">To Do list maker</div>
     <div class="add_text"><input type="text" class="text" placeholder="Add the work">
         <span class="symb" onclick="added()" >&#10003;</span></div>
 
     <div class="list_main" >
         <div class="sublist">
-        <p class="added_task1"></p>
+        <!-- <div class="ikon"> -->
+        <i class="fa fa-edit" id="one1"></i>
+        <i class="material-icons" id="one2" >delete</i>
+        <p class="added_task1"></p> 
+        <!-- </div> -->
         </div>
         <div class="sublist">
+        
+        <i class="fa fa-edit"id="two1"></i>
+        <i class="material-icons" id="two2" >delete</i>
         <p class="added_task2"></p>
          </div>
          <div class="sublist">
+       
+        <i class="fa fa-edit" id="three1"></i>
+        <i class="material-icons" id="three2">delete</i>
         <p class="added_task3"></p>
          </div>
          <div class="sublist">
+        
+        <i class="fa fa-edit" id="four1"></i>
+        <i class="material-icons" id="four2" >delete</i>
         <p class="added_task4"></p>
          </div>
          <div class="sublist">
+        
+        <i class="fa fa-edit" id="five1"></i>
+        <i class="material-icons" id="five2">delete</i>
         <p class="added_task5"></p>
         </div>
         <div class="sublist">
+        
+        <i class="fa fa-edit" id="six1"></i>
+        <i class="material-icons" id="six2" >delete</i>
         <p class="added_task6"></p>
         </div>
         <div class="sublist">
+        
+        <i class="fa fa-edit" id="seven1"></i>
+        <i class="material-icons" id="seven2" >delete</i>
         <p class="added_task7"></p>
          </div>
          <div class="sublist">
+       
+        <i class="fa fa-edit" id="eight1"></i>
+        <i class="material-icons" id="eight2" >delete</i>
         <p class="added_task8"></p>
          </div>
          <div class="sublist">
+        
+        <i class="fa fa-edit" id="nine1"></i>
+        <i class="material-icons" id="nine2">delete</i>
         <p class="added_task9"></p>
          </div>
          <div class="sublist">
+        
+        <i class="fa fa-edit" id="ten1"></i>
+        <i class="material-icons" id="ten2" >delete</i>
         <p class="added_task10"></p>
         </div>
         </div>
 
 
-
-
-    
     <script>
         let text= document.querySelector(".text");
         let added_text=document.querySelectorAll("p");
+        let icons=document.querySelector("i");
+        let dlt=document.querySelectorAll("#one2,#two2,#three2,#four2,#five2,#six2,#seven2,#eight2,#nine2,#ten2");
         // let x = document.querySelector(".text").placeholder;
         let count=1;
 
@@ -124,49 +163,69 @@
             
             if(count==1){
             document.querySelector(".added_task1").innerText=text.value;
-            text.value="";
+            text.value= "";
+            document.querySelector("#one1").style.display="block";
+            document.querySelector("#one2").style.display="block";
+            
             }
             else if(count==2){
             document.querySelector(".added_task2").innerText=text.value;
             text.value="";
+            document.querySelector("#two1").style.display="block";
+            document.querySelector("#two2").style.display="block";
             }
             else if(count==3){
             document.querySelector(".added_task3").innerText=text.value;
             text.value="";
+            document.querySelector("#three1").style.display="block";
+            document.querySelector("#three2").style.display="block";
             }
             else if(count==4){
             document.querySelector(".added_task4").innerText=text.value;
             text.value="";
+            document.querySelector("#four1").style.display="block";
+            document.querySelector("#four2").style.display="block";
             }
             else if(count==5){
             document.querySelector(".added_task5").innerText=text.value;
             text.value="";
+            document.querySelector("#five1").style.display="block";
+            document.querySelector("#five2").style.display="block";
             }
             else if(count==6){
             document.querySelector(".added_task6").innerText=text.value;
             text.value="";
+            document.querySelector("#six1").style.display="block";
+            document.querySelector("#six2").style.display="block";
             }
             else if(count==7){
             document.querySelector(".added_task7").innerText=text.value;
             text.value="";
+            document.querySelector("#seven1").style.display="block";
+            document.querySelector("#seven2").style.display="block";
             }
             else if(count==8){
             document.querySelector(".added_task8").innerText=text.value;
             text.value="";
+            document.querySelector("#eight1").style.display="block";
+            document.querySelector("#eight2").style.display="block";
             }
             else if(count==9){
             document.querySelector(".added_task9").innerText=text.value;
             text.value="";
+            document.querySelector("#nine1").style.display="block";
+            document.querySelector("#nine2").style.display="block";
             }
             else if(count==10){
             document.querySelector(".added_task10").innerText=text.value;
-            text.value="";
+            text.value= "";
+            document.querySelector("#ten1").style.display="block";
+            document.querySelector("#ten2").style.display="block";
             }
             else if(count>=11){
                 alert("limit exceed!For adding more, unlock the paid version");
             }
-            
-    
+        
             count++;
 
         }
@@ -176,6 +235,12 @@
         }
 
       }
+
+    //   dlt.addEventListener("onclick",()=>{
+        
+    //     alert("hello");
+    //     console.log("dlt clicked!")
+    //   });
 
     </script>
 </body>
