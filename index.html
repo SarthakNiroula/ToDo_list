@@ -25,26 +25,22 @@
     .add_text{
         text-align: center;
         background-color: rgb(155, 155, 66);
-        /* height:1vh; */
         margin-top: 2%;
         padding: 2%;
     }
     .add_text input{
-        /* height: 7; */
         width:80%;
     }
     .symb{
         color: rgb(255, 255, 255);
         background-color: black;
         border: solid transparent;
-        /* width:  */
         height: 40vh;
         cursor: pointer;
     }
 
     .list_main{
         background-color: black;
-        /* color: rgb(152, 1, 1); */
         height: auto;
         margin: 1%;
         padding: 5%;
@@ -73,10 +69,6 @@
         overflow: auto;
     }
 
-    
-
-
-
 </style>
     </head>
 <body>
@@ -86,77 +78,81 @@
         <span class="symb" onclick="added()" >&#10003;</span></div>
 
     <div class="list_main" >
-        <div class="sublist">
-        <!-- <div class="ikon"> -->
-        <i class="fa fa-edit" id="one1"></i>
+
+        <div class="sublist" id="sub_1">
+        <i class="fa fa-check" id="one1"></i>
         <i class="material-icons" id="one2" >delete</i>
         <p class="added_task1"></p> 
-        <!-- </div> -->
         </div>
-        <div class="sublist">
-        
-        <i class="fa fa-edit"id="two1"></i>
+
+        <div class="sublist" id="sub_2"> 
+        <i class="fa fa-check"id="two1"></i>
         <i class="material-icons" id="two2" >delete</i>
         <p class="added_task2"></p>
          </div>
-         <div class="sublist">
-       
-        <i class="fa fa-edit" id="three1"></i>
+
+         <div class="sublist" id="sub_3">
+        <i class="fa fa-check" id="three1"></i>
         <i class="material-icons" id="three2">delete</i>
         <p class="added_task3"></p>
          </div>
-         <div class="sublist">
-        
-        <i class="fa fa-edit" id="four1"></i>
+
+         <div class="sublist" id="sub_4">
+        <i class="fa fa-check" id="four1"></i>
         <i class="material-icons" id="four2" >delete</i>
         <p class="added_task4"></p>
          </div>
-         <div class="sublist">
-        
-        <i class="fa fa-edit" id="five1"></i>
+
+         <div class="sublist" id="sub_5">
+        <i class="fa fa-check" id="five1"></i>
         <i class="material-icons" id="five2">delete</i>
         <p class="added_task5"></p>
         </div>
-        <div class="sublist">
-        
-        <i class="fa fa-edit" id="six1"></i>
+
+        <div class="sublist" id="sub_6">
+        <i class="fa fa-check" id="six1"></i>
         <i class="material-icons" id="six2" >delete</i>
         <p class="added_task6"></p>
         </div>
-        <div class="sublist">
-        
-        <i class="fa fa-edit" id="seven1"></i>
+
+        <div class="sublist" id="sub_7">
+        <i class="fa fa-check" id="seven1"></i>
         <i class="material-icons" id="seven2" >delete</i>
         <p class="added_task7"></p>
          </div>
-         <div class="sublist">
-       
-        <i class="fa fa-edit" id="eight1"></i>
+
+         <div class="sublist" id="sub_8">
+        <i class="fa fa-check" id="eight1"></i>
         <i class="material-icons" id="eight2" >delete</i>
         <p class="added_task8"></p>
          </div>
-         <div class="sublist">
-        
-        <i class="fa fa-edit" id="nine1"></i>
+
+         <div class="sublist" id="sub_9">
+        <i class="fa fa-check" id="nine1"></i>
         <i class="material-icons" id="nine2">delete</i>
         <p class="added_task9"></p>
          </div>
-         <div class="sublist">
-        
-        <i class="fa fa-edit" id="ten1"></i>
+
+         <div class="sublist" id="sub_10">
+        <i class="fa fa-check" id="ten1"></i>
         <i class="material-icons" id="ten2" >delete</i>
         <p class="added_task10"></p>
         </div>
-        </div>
+
+    </div>
 
 
     <script>
         let text= document.querySelector(".text");
         let added_text=document.querySelectorAll("p");
-        let icons=document.querySelector("i");
-        let dlt=document.querySelectorAll("#one2,#two2,#three2,#four2,#five2,#six2,#seven2,#eight2,#nine2,#ten2");
-        // let x = document.querySelector(".text").placeholder;
+     
         let count=1;
+
+        text.addEventListener("keyup", (e) => {
+            if (e.key === "Enter") {
+            added(); //function call
+              }
+           });
 
         const added=()=>{
             if(text.value!=""){
@@ -166,7 +162,7 @@
             text.value= "";
             document.querySelector("#one1").style.display="block";
             document.querySelector("#one2").style.display="block";
-            
+            // dlt();
             }
             else if(count==2){
             document.querySelector(".added_task2").innerText=text.value;
@@ -236,11 +232,32 @@
 
       }
 
-    //   dlt.addEventListener("onclick",()=>{
+      const deleteIcons = document.querySelectorAll('.material-icons');
+
+// Loop through each delete icon and add a click event listener
+    deleteIcons.forEach(icon => {
+     icon.addEventListener('click', (event) => {
+        // Find the parent .sublist of the clicked delete icon
+        const sublist = event.target.closest('.sublist');
         
-    //     alert("hello");
-    //     console.log("dlt clicked!")
-    //   });
+        // Remove the .sublist element (task item) from the DOM
+        sublist.remove();
+    });
+   });
+
+       const edit=document.querySelectorAll(".fa-check");
+
+        edit.forEach(check=>{
+        check.addEventListener("click",(event)=>{
+        const parentDiv = event.target.closest('.sublist');
+        
+        const list = parentDiv.querySelector('p');
+
+        list.style.textDecoration = "line-through";  
+
+       })
+    });
+
 
     </script>
 </body>
